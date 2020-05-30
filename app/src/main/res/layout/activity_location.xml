@@ -48,8 +48,7 @@
         android:layout_above="@id/location_button_retry"
         android:layout_marginBottom="8dp"
         android:textColor="@color/colorPrimary"
-        android:backgroundTint="@android:color/white"
-        app:rippleColor="#AEAEAE"
+        android:backgroundTint="@color/colorWhite"
         android:id="@+id/location_button_confirm"
         android:onClick="confirmBtn"
         android:visibility="gone"/>
@@ -60,8 +59,7 @@
         android:text="Try Again"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:backgroundTint="@android:color/white"
-        app:rippleColor="#AEAEAE"
+        android:backgroundTint="@color/colorWhite"
         android:layout_alignParentBottom="true"
         android:id="@+id/location_button_retry"
         android:onClick="retryBtn"/>

@@ -50,7 +50,6 @@ public class Location extends AppCompatActivity implements GoogleMap.OnMapClickL
     TextView textViewMsg;
     Button buttonRetry,buttonConfirm;
     LottieAnimationView lottieGpsFailure;
-    // CustomLoadingDialog loadingDialog;
 
     FusedLocationProviderClient client;
 
@@ -67,7 +66,6 @@ public class Location extends AppCompatActivity implements GoogleMap.OnMapClickL
         buttonRetry = findViewById(R.id.location_button_retry);
         buttonConfirm = findViewById(R.id.location_button_confirm);
         lottieGpsFailure = findViewById(R.id.location_lottie_gps_failure);
-        // loadingDialog = new CustomLoadingDialog(Location.this);
 
         client = LocationServices.getFusedLocationProviderClient(Location.this);
 

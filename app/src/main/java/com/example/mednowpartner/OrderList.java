@@ -33,7 +33,6 @@ public class OrderList extends AppCompatActivity implements OrderListAdapter.Ord
     Toolbar toolbar;
     RecyclerView recyclerView;
     TextView textViewHeader;
-    // CustomLoadingDialog loadingDialog;
 
     FirebaseUser firebaseUser;
     DatabaseReference databaseReferenceCustomers,databaseReferencePrescriptions;
@@ -48,7 +47,6 @@ public class OrderList extends AppCompatActivity implements OrderListAdapter.Ord
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(OrderList.this));
         textViewHeader = findViewById(R.id.order_list_text_view_header);
-        // loadingDialog = new CustomLoadingDialog(ChatHistory.this);
 
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
@@ -61,7 +59,6 @@ public class OrderList extends AppCompatActivity implements OrderListAdapter.Ord
         databaseReferencePrescriptions = FirebaseDatabase.getInstance().getReference().child("Prescriptions");
 
         orders = new ArrayList<>();
-        // loadingDialog.startLoadingDialog();
         databaseReferencePrescriptions.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

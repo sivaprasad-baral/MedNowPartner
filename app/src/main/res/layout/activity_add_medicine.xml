@@ -3,20 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGreyBg"
+    tools:context=".AddMedicine"
     android:padding="15dp"
-    tools:context=".MakeReceipt">
-
-    <com.github.piasy.biv.view.BigImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/make_receipt_image_view_prescription"
-        android:layout_marginBottom="15dp"/>
+    android:background="@color/colorGreyBg">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/make_receipt_edit_text_search"
+        android:id="@+id/add_med_edit_text_search"
         android:maxLines="1"
         android:singleLine="true"
         android:paddingStart="10dp"
@@ -26,25 +20,35 @@
         android:textSize="15sp"
         android:drawablePadding="15dp"
         tools:ignore="RtlSymmetry"
-        android:inputType="text"
-        android:layout_below="@id/make_receipt_image_view_prescription"/>
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_med_text_view_msg"
+        android:layout_below="@id/add_med_edit_text_search"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/alloy_bold"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/make_receipt_recycler_view"
-        android:layout_below="@id/make_receipt_edit_text_search"
-        android:layout_above="@id/make_receipt_btn_send_bill"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"/>
+        android:id="@+id/add_med_recycler_view"
+        android:layout_below="@id/add_med_text_view_msg"
+        android:layout_above="@id/add_med_btn_add"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/make_receipt_btn_send_bill"
+        android:text="Add Selected Medicines"
         android:layout_alignParentBottom="true"
-        android:text="Make Receipt"
-        android:onClick="makeReceiptBtn"/>
+        android:id="@+id/add_med_btn_add"
+        android:onClick="confirmAddBtn"/>
 
 </RelativeLayout>

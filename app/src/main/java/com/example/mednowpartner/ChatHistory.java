@@ -33,7 +33,6 @@ public class ChatHistory extends AppCompatActivity implements ChatHistoryAdapter
     Toolbar toolbar;
     RecyclerView recyclerView;
     TextView textViewHeader;
-    // CustomLoadingDialog loadingDialog;
 
     FirebaseUser firebaseUser;
     DatabaseReference databaseReferenceCustomers,databaseReferenceChats;
@@ -48,7 +47,6 @@ public class ChatHistory extends AppCompatActivity implements ChatHistoryAdapter
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(ChatHistory.this));
         textViewHeader = findViewById(R.id.chat_history_text_view_header);
-        // loadingDialog = new CustomLoadingDialog(ChatHistory.this);
 
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
@@ -61,7 +59,6 @@ public class ChatHistory extends AppCompatActivity implements ChatHistoryAdapter
         databaseReferenceChats = FirebaseDatabase.getInstance().getReference().child("Chats");
 
         customerUserIds = new ArrayList<>();
-        // loadingDialog.startLoadingDialog();
         databaseReferenceChats.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

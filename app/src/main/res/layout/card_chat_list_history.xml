@@ -9,31 +9,32 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
-        app:cardBackgroundColor="@color/colorWhite"
         android:layout_marginBottom="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:background="@color/colorWhite"
+            android:padding="7dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="?actionBarSize"
+                android:layout_height="?actionBarSize"
                 app:civ_border_width="2dp"
                 app:civ_border_color="@color/colorAccent"
                 android:layout_centerVertical="true"
                 android:id="@+id/chat_history_circle_image_view_customer_image"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/alloy_bold"
                 android:textColor="@color/colorAccent"
                 android:layout_toEndOf="@id/chat_history_circle_image_view_customer_image"
                 android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"
                 android:id="@+id/chat_history_text_view_customer_name"/>
 
         </RelativeLayout>

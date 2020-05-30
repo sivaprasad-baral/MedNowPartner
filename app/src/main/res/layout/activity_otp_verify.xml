@@ -98,7 +98,6 @@
         android:backgroundTint="@color/colorPrimary"
         app:fabCustomSize="55dp"
         tools:ignore="RelativeOverlap"
-        app:rippleColor="@color/colorRipple"
         android:onClick="verifyOTPBtn"/>
 
     <ticker.views.com.ticker.widgets.circular.timer.view.CircularView

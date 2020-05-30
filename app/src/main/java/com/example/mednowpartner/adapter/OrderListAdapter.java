@@ -32,8 +32,8 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
     @NonNull
     @Override
-    public OrderListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new OrderListAdapter.ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_order_list, parent, false), orderListClickListener);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_order_list, parent, false), orderListClickListener);
     }
 
     @Override

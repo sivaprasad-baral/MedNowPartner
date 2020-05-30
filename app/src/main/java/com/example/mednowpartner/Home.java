@@ -181,4 +181,8 @@ public class Home extends AppCompatActivity {
     public void orderListBtn(View view) {
         startActivity(new Intent(Home.this,OrderList.class));
     }
+
+    public void inventoryBtn(View view) {
+        startActivity(new Intent(Home.this,Inventory.class));
+    }
 }

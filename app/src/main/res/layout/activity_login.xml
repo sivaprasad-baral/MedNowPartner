@@ -117,7 +117,6 @@
         android:backgroundTint="@color/colorPrimary"
         app:fabCustomSize="55dp"
         tools:ignore="RelativeOverlap"
-        app:rippleColor="@color/colorRipple"
         android:onClick="loginPhoneBtn"/>
 
     <TextView
@@ -139,7 +138,6 @@
         app:icon="@drawable/ic_facebook"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:rippleColor="@color/colorFbRipple"
         android:layout_marginTop="10dp"
         android:onClick="loginFbBtn"/>
 
