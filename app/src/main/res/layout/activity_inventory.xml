@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inventory"
+    android:padding="15dp"
+    android:background="@color/colorGreyBg">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/inventory_edit_text_search"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:paddingStart="10dp"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:background="@drawable/make_receipt_search"
+        android:hint="Search medicines"
+        android:textSize="15sp"
+        android:drawablePadding="15dp"
+        tools:ignore="RtlSymmetry"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inventory_text_view_msg"
+        android:layout_below="@id/inventory_edit_text_search"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/alloy_bold"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/inventory_recycler_view"
+        android:layout_below="@id/inventory_text_view_msg"
+        android:layout_above="@id/inventory_btn_add"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Medicines To Inventory"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/inventory_btn_add"
+        android:onClick="addMedBtn"/>
+
+</RelativeLayout>
