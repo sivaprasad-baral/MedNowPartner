@@ -6,7 +6,7 @@
     android:background="@color/colorGreyBg"
     android:orientation="vertical"
     tools:context=".ConfirmReceipt"
-    android:padding="10dp">
+    android:padding="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="20dp"
             android:id="@+id/confirm_receipt_layout_receipt">
 
             <TextView
@@ -23,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:text="Order Summary"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"
                 android:fontFamily="@font/alloy_bold"/>
@@ -31,7 +32,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:orientation="vertical"
                 android:background="@color/colorWhite">
 
@@ -47,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -58,7 +59,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="10dp"
                             android:fontFamily="@font/alloy_bold"
                             android:textStyle="bold"
                             android:textSize="18sp"
@@ -69,18 +70,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/alloy_bold"
+                            android:layout_marginTop="5dp"
                             android:textSize="13sp"
                             android:textColor="@color/colorAccent"
                             android:id="@+id/confirm_receipt_text_view_customer_address"/>
 
                     </LinearLayout>
 
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorGreyBg"/>
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical"
-                        android:padding="5dp">
+                        android:padding="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -96,6 +103,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="end"
+                            android:layout_marginTop="5dp"
                             android:fontFamily="@font/alloy_bold"
                             android:textSize="13sp"
                             android:textColor="@color/colorAccent"
@@ -105,41 +113,50 @@
 
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorGreyBg"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/colorAccent"
-                    android:id="@+id/confirm_receipt_text_view_order_date_time"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:text="Items added to the order"
                     android:textColor="@color/colorAccent"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorGreyBg"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:padding="5dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
                     android:id="@+id/confirm_receipt_recycler_view"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorGreyBg"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
                         android:text="Total Cost"
                         android:fontFamily="@font/alloy_bold"
                         android:textSize="18sp"
@@ -152,10 +169,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="end"
                         android:layout_alignParentEnd="true"
-                        android:padding="5dp"
                         android:fontFamily="@font/alloy_bold"
                         android:textSize="18sp"
-                        android:textColor="@color/coloRed"
+                        android:textColor="@color/colorRed"
                         android:textStyle="bold"
                         android:id="@+id/confirm_receipt_text_view_cost"/>
 

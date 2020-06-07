@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.mednowpartner.model.Prescription;
+import com.example.mednowpartner.model.Order;
 import com.github.piasy.biv.BigImageViewer;
 import com.github.piasy.biv.indicator.progresspie.ProgressPieIndicator;
 import com.github.piasy.biv.loader.glide.GlideImageLoader;
@@ -19,19 +19,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
 public class ViewPrescription extends AppCompatActivity {
 
-    String prescriptionId;
+    String orderId;
 
     BigImageView bigImageViewPrescription;
 
-    DatabaseReference databaseReferencePrescriptions;
-    StorageReference storageReference;
+    DatabaseReference databaseReferenceOrders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +38,19 @@ public class ViewPrescription extends AppCompatActivity {
 
         bigImageViewPrescription = findViewById(R.id.view_prescription_image_view_prescription);
 
-        prescriptionId = getIntent().getStringExtra("prescriptionId");
-        databaseReferencePrescriptions = FirebaseDatabase.getInstance().getReference("Prescriptions").child(prescriptionId);
+        orderId = getIntent().getStringExtra("orderId");
+        databaseReferenceOrders = FirebaseDatabase.getInstance().getReference("Orders").child(orderId);
+        databaseReferenceOrders.child("orderStatus").setValue(Order.ORDER_PROCESSING);
         displayPrescription();
     }
 
     private void displayPrescription() {
-        databaseReferencePrescriptions.addValueEventListener(new ValueEventListener() {
+        databaseReferenceOrders.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Prescription prescription = dataSnapshot.getValue(Prescription.class);
-                databaseReferencePrescriptions.removeEventListener(this);
-                storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(Objects.requireNonNull(prescription).getPrescriptionImg());
-                bigImageViewPrescription.showImage(Uri.parse(Objects.requireNonNull(prescription).getPrescriptionImg()));
+                Order order = dataSnapshot.getValue(Order.class);
+                databaseReferenceOrders.removeEventListener(this);
+                bigImageViewPrescription.showImage(Uri.parse(Objects.requireNonNull(order).getPrescriptionImg()));
                 bigImageViewPrescription.setProgressIndicator(new ProgressPieIndicator());
             }
 
@@ -65,17 +62,16 @@ public class ViewPrescription extends AppCompatActivity {
     }
 
     public void rejectBtn(View view) {
-        databaseReferencePrescriptions.removeValue();
-        storageReference.delete();
         onBackPressed();
     }
 
     public void acceptBtn(View view) {
-        startActivity(new Intent(ViewPrescription.this,MakeReceipt.class).putExtra("prescriptionId",prescriptionId).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+        startActivity(new Intent(ViewPrescription.this,MakeReceipt.class).putExtra("orderId",orderId).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 
     @Override
     public void onBackPressed() {
+        databaseReferenceOrders.child("orderStatus").setValue(Order.ORDER_REJECTED_BY_PARTNER);
         startActivity(new Intent(ViewPrescription.this,OrderList.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
     }
 }

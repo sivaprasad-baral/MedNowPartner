@@ -63,6 +63,7 @@ public class PharmacyInfo extends AppCompatActivity {
                 Objects.requireNonNull(partner).setPharmacyName(pharmacyName);
                 partner.setLicenseNo(licenseNo);
                 partner.setRating(0.0);
+                partner.setWalletBalance(0);
                 databaseReference.setValue(partner).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

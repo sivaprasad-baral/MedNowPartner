@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorWhite"
                 android:textSize="20sp"
+                android:layout_marginEnd="12dp"
                 android:fontFamily="@font/alloy_bold"
                 android:id="@+id/chat_history_text_view_header"/>
 

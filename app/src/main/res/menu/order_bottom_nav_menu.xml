@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/newOrderFragment"
+        android:title="New"
+        android:icon="@drawable/ic_external_link_alt"/>
+
+    <item
+        android:id="@id/confirmedOrderFragment"
+        android:title="Confirmed"
+        android:icon="@drawable/ic_check_square"/>
+
+    <item
+        android:id="@id/allOrderFragment"
+        android:title="All"
+        android:icon="@drawable/ic_database"/>
+
+</menu>

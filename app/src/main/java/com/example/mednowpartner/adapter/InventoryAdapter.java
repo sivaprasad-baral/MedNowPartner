@@ -48,7 +48,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Medicine medicine = medicines.get(position);
         holder.textViewMedName.setText(medicine.getMedName());
-        String priceTag = "Rs.".concat(medicine.getMedPrice());
+        String priceTag = "Rs. ".concat(medicine.getMedPrice());
         holder.textViewMedPrice.setText(priceTag);
         holder.btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +58,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
                 medicines.remove(medicine);
                 medicinesAll.remove(medicine);
                 if(medicines.isEmpty()) {
-                    String msg = "No items currently in Inventory";
+                    String msg = "No item currently in inventory";
                     Inventory.textViewMsg.setText(msg);
                 }
                 notifyItemRemoved(position);

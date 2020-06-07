@@ -6,6 +6,7 @@ public class Partner {
     private String licenseNo,pharmacyName,pharmacyImg;
     private Double latitude,longitude,rating;
     private boolean available;
+    private int walletBalance;
 
     public Partner() {
     }
@@ -132,5 +133,13 @@ public class Partner {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public int getWalletBalance() {
+        return walletBalance;
+    }
+
+    public void setWalletBalance(int walletBalance) {
+        this.walletBalance = walletBalance;
     }
 }

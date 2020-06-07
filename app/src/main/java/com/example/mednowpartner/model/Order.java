@@ -4,31 +4,27 @@ import java.util.Map;
 
 public class Order {
 
-    private String partnerId,customerId,orderId,orderDate,orderTime;
+    private String partnerId,customerId,orderId,prescriptionImg;
+    private long orderTimeStamp,prescriptionTimeStamp;
     private double cost;
-    private Map<String,Object> medicines;
+    private Map<String,Medicine> medicines;
     private int orderStatus;
+    private boolean paid;
+    private String otpDelivery;
+
+    public static final int ORDER_SENT = 0;
+    public static final int ORDER_TIMED_OUT = 1;
+    public static final int ORDER_PROCESSING = 2;
+    public static final int ORDER_REJECTED_BY_PARTNER = 3;
+    public static final int ORDER_REJECTED_BY_CUSTOMER = 4;
+    public static final int ORDER_SENT_FOR_CONFIRMATION = 5;
+    public static final int ORDER_CONFIRMED_BY_CUSTOMER = 6;
+    public static final int ORDER_OUT_FOR_DELIVERY = 7;
+    public static final int ORDER_DELIVERED = 8;
+    public static final int ORDER_CANCELLED = 9;
+    public static final int ORDER_RETURNED = 10;
 
     public Order() {
-    }
-
-    public Order(String partnerId, String customerId, String orderId, double cost, Map<String, Object> medicines) {
-        this.partnerId = partnerId;
-        this.customerId = customerId;
-        this.orderId = orderId;
-        this.cost = cost;
-        this.medicines = medicines;
-    }
-
-    public Order(String partnerId, String customerId, String orderId, String orderDate, String orderTime, double cost, Map<String, Object> medicines, int orderStatus) {
-        this.partnerId = partnerId;
-        this.customerId = customerId;
-        this.orderId = orderId;
-        this.orderDate = orderDate;
-        this.orderTime = orderTime;
-        this.cost = cost;
-        this.medicines = medicines;
-        this.orderStatus = orderStatus;
     }
 
     public String getPartnerId() {
@@ -47,6 +43,38 @@ public class Order {
         this.customerId = customerId;
     }
 
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getPrescriptionImg() {
+        return prescriptionImg;
+    }
+
+    public void setPrescriptionImg(String prescriptionImg) {
+        this.prescriptionImg = prescriptionImg;
+    }
+
+    public long getOrderTimeStamp() {
+        return orderTimeStamp;
+    }
+
+    public void setOrderTimeStamp(long orderTimeStamp) {
+        this.orderTimeStamp = orderTimeStamp;
+    }
+
+    public long getPrescriptionTimeStamp() {
+        return prescriptionTimeStamp;
+    }
+
+    public void setPrescriptionTimeStamp(long prescriptionTimeStamp) {
+        this.prescriptionTimeStamp = prescriptionTimeStamp;
+    }
+
     public double getCost() {
         return cost;
     }
@@ -55,11 +83,11 @@ public class Order {
         this.cost = cost;
     }
 
-    public Map<String, Object> getMedicines() {
+    public Map<String, Medicine> getMedicines() {
         return medicines;
     }
 
-    public void setMedicines(Map<String, Object> medicines) {
+    public void setMedicines(Map<String, Medicine> medicines) {
         this.medicines = medicines;
     }
 
@@ -71,27 +99,19 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public String getOrderId() {
-        return orderId;
+    public boolean isPaid() {
+        return paid;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 
-    public String getOrderDate() {
-        return orderDate;
+    public String getOtpDelivery() {
+        return otpDelivery;
     }
 
-    public void setOrderDate(String orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public String getOrderTime() {
-        return orderTime;
-    }
-
-    public void setOrderTime(String orderTime) {
-        this.orderTime = orderTime;
+    public void setOtpDelivery(String otpDelivery) {
+        this.otpDelivery = otpDelivery;
     }
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_bottom_navigation_graph"
+    app:startDestination="@id/newOrderFragment">
+
+    <fragment
+        android:id="@+id/newOrderFragment"
+        android:name="com.example.mednowpartner.fragment.NewOrderFragment"
+        tools:layout="@layout/fragment_new_order"/>
+
+    <fragment
+        android:id="@+id/confirmedOrderFragment"
+        android:name="com.example.mednowpartner.fragment.ConfirmedOrderFragment"
+        tools:layout="@layout/fragment_confirmed_order"/>
+
+    <fragment
+        android:id="@+id/allOrderFragment"
+        android:name="com.example.mednowpartner.fragment.AllOrderFragment"
+        tools:layout="@layout/fragment_all_order"/>
+
+
+</navigation>
